@@ -1,0 +1,162 @@
+/* Анимации появления */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.appear,
+.fade-in-left.appear,
+.fade-in-right.appear,
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Задержки для последовательного появления */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+.delay-5 { transition-delay: 1.0s; }
+
+/* Анимации для футера */
+.footer-col {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.footer-col.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация для ссылок в футере */
+.footer-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: #8800FF !important;
+    padding-left: 10px !important;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+    width: 20px;
+}
+
+/* Стили для адаптации футера */
+@media (max-width: 768px) {
+    .footer-col {
+        margin-bottom: 2rem;
+    }
+    
+    .footer-logo {
+        max-width: 150px;
+    }
+    
+    /* Скрываем фоновое изображение на мобильных устройствах */
+    .hide-bg-mobile {
+        background-image: none !important;
+    }
+    
+    /* Улучшаем отступы на мобильных */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 2rem !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Дополнительные стили для футера */
+footer {
+    background: linear-gradient(135deg, );
+    color: #000000;
+}
+
+.footer-text {
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+}
+
+.border-top {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.footer-section h5 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-section h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #8800FF;
+    transition: width 0.3s ease;
+}
+
+.footer-section:hover h5::after {
+    width: 60px;
+}
+
+/* Стили для курсора и звуковых эффектов */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%238800FF" opacity="0.7"/></svg>') 12 12, auto;
+}
+
+.sound-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sound-image:hover {
+    transform: scale(1.02);
+}
+
+/* Отключение увеличения для изображений в футере */
+footer .sound-image:hover {
+    transform: none;
+}
+
+.card .sound-image:hover {
+transform: none;
+}
